@@ -36,6 +36,13 @@
 	</div>
 	<script>
 		// your code here...
+		let btnAdd = document.querySelector('#btnAdd');
+		let inpIn = document.querySelector('#inpIn');
+		let txtOut = document.querySelector('#txtOut');
+		btnAdd.addEventListener('click', function() {
+			txtOut.appendChild(inpIn)
+			inpIn.innerHTML = "";
+		});
 	</script>
 </body>
 </html>
