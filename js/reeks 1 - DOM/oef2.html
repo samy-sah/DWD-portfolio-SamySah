@@ -40,8 +40,8 @@
 		let inpIn = document.querySelector('#inpIn');
 		let txtOut = document.querySelector('#txtOut');
 		btnAdd.addEventListener('click', function() {
-			txtOut.appendChild(inpIn)
-			inpIn.innerHTML = "";
+			console.log('ok');
+			txtOut.innerHTML = inpIn.value + '<br>' + txtOut.innerHTML + '<br>'
 		});
 	</script>
 </body>
