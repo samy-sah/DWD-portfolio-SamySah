@@ -38,10 +38,11 @@
 		];
 		let btnRandom = document.querySelector('#btnRandom');
 		let imgBig = document.querySelector('#imgBig');
+		let pTitle = document.querySelector('#imgBig + p');
 		btnRandom.addEventListener('click', function() {
-			console.log('ok');
 			let random = Math.floor(Math.random() * photos.length + 1);
-			imgBig.src = photos[random];
+			imgBig.src = photos[random].url;
+			pTitle.innerHTML = photos[random].title;
 		});
 		// your code here...
 	</script>

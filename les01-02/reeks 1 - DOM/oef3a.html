@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+=<!DOCTYPE html>
 <html>
 <head>
 	<title>Reeks 1 oef3a</title>
@@ -37,8 +37,7 @@
 			let btnRandom = document.querySelector('#btnRandom');
 			let imgBig = document.querySelector('#imgBig');
 			btnRandom.addEventListener('click', function() {
-				console.log('ok');
-				let random = Math.floor(Math.random() * photos.length);
+				let random = Math.floor(Math.random() * photos.length + 1);
 				imgBig.src = photos[random];
 			});
 		// your code here...
