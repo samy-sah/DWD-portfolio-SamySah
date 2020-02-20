@@ -36,6 +36,13 @@
 			{ url: 'https://bitmatters.be/o/img/photo3-m.jpg', title: 'Ait Ben Haddou, Marokko'},
 			{ url: 'https://bitmatters.be/o/img/photo20-m.jpg', title: 'Bevroren bomen, Finland'}
 		];
+		let btnRandom = document.querySelector('#btnRandom');
+		let imgBig = document.querySelector('#imgBig');
+		btnRandom.addEventListener('click', function() {
+			console.log('ok');
+			let random = Math.floor(Math.random() * photos.length + 1);
+			imgBig.src = photos[random];
+		});
 		// your code here...
 	</script>
 </body>
