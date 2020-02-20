@@ -26,9 +26,6 @@
 	<p><button id="btnRandom">generate random image</button></p>
 			
 	<script>
-		let imgBig = Math.floor((Math.random()*6)+1);
-		console.log('#imgBig');
-		document.getElementById('#btnRandom').innerHTML;
 		let photos = [
 			'https://bitmatters.be/o/img/photo1-m.jpg',
 			'https://bitmatters.be/o/img/photo17-m.jpg',
@@ -37,6 +34,14 @@
 			'https://bitmatters.be/o/img/photo3-m.jpg',
 			'https://bitmatters.be/o/img/photo20-m.jpg'
 			];
+			let btnRandom = document.querySelector('#btnRandom');
+			let imgBig = document.querySelector('#imgBig');
+			btnRandom.addEventListener('click', function() {
+				console.log('ok');
+				let random = Math.floor(Math.random() * photos.length);
+				imgBig.src = photos[random];
+			});
+
 		// your code here...
 	</script>
 </body>
