@@ -37,7 +37,21 @@
 			{ url: 'https://bitmatters.be/o/img/photo3-m.jpg', title: 'Ait Ben Haddou, Marokko'},
 			{ url: 'https://bitmatters.be/o/img/photo20-m.jpg', title: 'Bevroren bomen, Finland'}
 		];
-		// your code here...
+		let btnNext = document.querySelector('#btnNext');
+		let imgBig = document.querySelector('#imgBig');
+		let title = document.querySelector('.title');
+		let num = 0;
+		btnNext.addEventListener('click', function() {
+
+			imgBig.src = photos[num].url;
+			title.innerHTML = ' foto ' + (num + 1) + ': ' + photos[num].title;
+			num++;
+			if (num > 5)
+			{
+				num = 0;
+			}
+
+		});
 	</script>
 </body>
 </html>
