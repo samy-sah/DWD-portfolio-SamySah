@@ -27,6 +27,12 @@
 	</ul>
 	<p>Aangeklikte link: <span id="msg"></span></p>
 	<script>
+		let msg = document.querySelector('#msg');
+		let link = document.querySelector('#navigator');
+		link.addEventListener('', function(e) {
+			e.preventDefault();
+			msg.innerHTML = navigator.href;
+		});
 		// your code here...
 	</script>
 </body>

@@ -25,6 +25,15 @@
 	<p><input id="inpIn"></p>
 	<p id="msgTyped" class="message">aantal karakters: <span>0</span></p>
 	<script>
+		let inpIn = document.querySelector('#inpIn');
+		let msgTyped = document.querySelector('#msgTyped');
+		inpIn.addEventListener('keyup', function(e) {
+			inpIn.innerHTML = msgTyped.innerHTML;
+			msgTyped.innerHTML ='aantal karakters: ' + inpIn.value.length;
+			if (e.keyCode == 13){
+				inpIn.textContent = "";
+			}
+		});
 		// your code here...
 	</script>
 </body>
