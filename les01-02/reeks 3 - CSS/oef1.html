@@ -37,6 +37,13 @@
 	</div>
 	<p id="text">Af producten ze opbrengst op denkbeeld te. Ongebruikt wie losgemaakt zee was ingezameld een. Rijen te heele dient op moest in in komen. Federatie gesteente al na daaronder. Zes bezorgden men ter verkoopen leeningen gewijzigd. Nu apen hier ik daad en dank. </p>
 	<script>
+		let inpColor = document.querySelector('#inpColor');
+		let rngSize = document.querySelector('#rngSize');
+		let selFamily = document.querySelector('#selFamily');
+		let text = document.querySelector('#text');
+		rngSize.addEventListener('input', function() {
+			text.fontSize = rngSize.value;
+		});
 		// your code here...
 	</script>
 </body>

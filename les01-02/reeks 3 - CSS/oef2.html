@@ -25,7 +25,11 @@
 	<div class="box">
 	</div>
 	<script>
-		// your code here...
+		let rngRotate = document.querySelector('#rngRotate');
+		let box = document.querySelector('.box');
+		rngRotate.addEventListener('input', function() {
+			box.Rotatie = rngRotate.value;
+		});		// your code here...
 	</script>
 </body>
 </html>
