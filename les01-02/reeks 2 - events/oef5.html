@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 	<title>Reeks 2 oef5</title>
@@ -27,6 +27,16 @@
 	<p><input type="button" value="reset" id="btnReset"></p>
 			
 	<script>
+		let rng1 = document.querySelector('#rng1');
+		let num = document.querySelector('#num');
+		let btnReset = document.querySelector('#btnReset');
+		rng1.addEventListener('input', function() {
+			num.innerHTML = rng1.value;
+		});
+		btnReset.addEventListener('click', function(e) {
+			e.preventDefault();
+			num.innerHTML = rng1.value = '5';
+		});
 		// your code here...
 	</script>
 </body>

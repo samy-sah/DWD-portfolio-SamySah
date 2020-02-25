@@ -32,6 +32,15 @@
 	</form>
 	<p>Login/paswoord combinatie: <span id="msg"></span></p>
 	<script>
+		let inpEmail = document.querySelector('#inpEmail');
+		let inpPassword = document.querySelector('#inpPassword');
+		let btnLogin = document.querySelector('#btnLogin');
+		let msg = document.querySelector('#msg');
+		btnLogin.addEventListener('click', function(e) {
+			e.preventDefault();
+			msg.innerHTML = inpEmail.value + ' / '+ inpPassword.value + msg.innerHTML + '<br>'
+
+		});
 		// your code here...
 	</script>
 </body>
