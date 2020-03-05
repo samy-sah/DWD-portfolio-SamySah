@@ -31,7 +31,8 @@
 			inpIn.innerHTML = msgTyped.innerHTML;
 			msgTyped.innerHTML ='aantal karakters: ' + inpIn.value.length;
 			if (e.keyCode == 13){
-				inpIn.textContent = "";
+				inpIn.value = ""
+				msgTyped.innerHTML = 'aantal karakters: ' + 0
 			}
 		});
 		// your code here...
