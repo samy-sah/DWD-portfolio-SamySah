@@ -40,7 +40,13 @@
 		</div>
 	</div>
 	<script>
-		let items = document
+		let items = document.querySelectorAll('.item');
+		for (let item of items){
+			item.addEventListener('click', function(){
+				this.classList.add('show');
+				this.querySelector('.present').src ='//bitmatters.be/o/icn/box-closed.png';
+			});
+		}
 		// your code here...
 	</script>
 </body>

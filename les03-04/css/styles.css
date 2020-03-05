@@ -1,0 +1,80 @@
+/**
+* General stylesheet 
+*
+*@author Samy Sah samy.sah@student.odisee.be>
+*
+*/
+
+/*=============================================
+* General
+===============================================*/
+html{
+	font-size: 0.625rem;
+}
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body { 
+	line-height: 2;
+	font-family: Arial;
+	font-size: 1.4rem;
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: 1.9rem;
+	padding-left: 1.9rem;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+div ul{
+	list-style: none;
+	text-align: center;
+	justify-content: center;
+}
+
+div li {
+	display: inline-block;
+	margin-left: 3rem;
+	text-transform: uppercase;
+	text-align: center;
+	border: solid 0.1rem;
+	width: 10rem;
+	margin-bottom: 3rem;
+	font-size: 1.3rem;
+}
+div a:hover{
+	background-color: #000000cc;
+	color: #fff;
+}
+div{
+	text-align: center;
+	justify-content: center;
+}
+img{
+	align-items: center;
+	width: 100%;;
+}
+body img{
+	background-position: center;
+}
+.wrapper{
+	display: flex; 
+}
+
+@media (min-width: 50rem){
+	.wrapper {
+		width: 100rem;
+	}
+	body{
+		width: 100rem;
+	}
+	div ul{
+		width: 100rem;
+	}
+	img{
+		width: 100%;
+	}
+}
