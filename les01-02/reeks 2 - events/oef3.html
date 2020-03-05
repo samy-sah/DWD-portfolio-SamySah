@@ -31,23 +31,18 @@
 			'https://bitmatters.be/o/img/photo3-m.jpg',
 			'https://bitmatters.be/o/img/photo20-m.jpg'
 		];
-		let assignment = document.querySelectorAll('#assignment');
-		let imgBig = document.querySelector('#imgBig');
-		let random = Math.floor(Math.random() * photos.length + 1);
-		imgBig.src = photos[random];
-		    document.addEventListener('kepdown', function(e) {
-		    	let arrow = { left: 37, right: 39 };
-		    	switch (e.which) {
-		    		case arrow.left:
-		    		$('photos')
-		    		random++;
-		    		break;
-
-		    		case arrow.right:
-		    		
-		    		break;
+			let currImg = 2;
+			let imgBig = document.querySelector('#imgBig');
+		    document.addEventListener('keydown', function(e){
+		    	e.preventDefault();
+		    	if(e.keyCode == 37 && currImg > 0){
+		    		currImg--;
 		    	}
-		        e.preventDefault();
+		    	if(e.keyCode == 39 && currImg < photos.length -1){
+		    		currImg++;
+		    	}
+		    	imgBig.src = photos[currImg];
+		    	console.log(currImg);
 		    });
 		// your code here...
 	</script>

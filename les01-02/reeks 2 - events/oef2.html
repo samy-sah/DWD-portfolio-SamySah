@@ -28,11 +28,13 @@
 	<p>Aangeklikte link: <span id="msg"></span></p>
 	<script>
 		let msg = document.querySelector('#msg');
-		let link = document.querySelector('#navigator');
-		link.addEventListener('', function(e) {
-			e.preventDefault();
-			msg.innerHTML = navigator.href;
-		});
+		let links = document.querySelectorAll('.navigator a');
+		for (let link of links){
+			link.addEventListener('click', function(e) {
+				e.preventDefault();
+				msg.innerHTML = link.innerHTML + ' (<a href="'+ link.href + '">link</a>)';
+			});
+		}
 		// your code here...
 	</script>
 </body>

@@ -28,7 +28,7 @@
 		let rngRotate = document.querySelector('#rngRotate');
 		let box = document.querySelector('.box');
 		rngRotate.addEventListener('input', function() {
-			box.Rotatie = rngRotate.value;
+			box.style.transform = 'Rotate(${this.value}deg';
 		});		// your code here...
 	</script>
 </body>

@@ -41,8 +41,11 @@
 		let rngSize = document.querySelector('#rngSize');
 		let selFamily = document.querySelector('#selFamily');
 		let text = document.querySelector('#text');
+		inpColor.addEventListener('change', function() {
+			text.style.color = this.value;
+		});
 		rngSize.addEventListener('input', function() {
-			text.fontSize = rngSize.value;
+			text.style.fontSize = this.value + 'px';
 		});
 		// your code here...
 	</script>
