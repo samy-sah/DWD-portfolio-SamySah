@@ -8,7 +8,7 @@
 /*=============================================
 * General
 ===============================================*/
-html{
+html{ 
 	font-size: 0.625rem;
 }
 *{
@@ -36,6 +36,7 @@ div ul{
 }
 
 div li {
+	background-color: #00000066;
 	display: inline-block;
 	margin-left: 3rem;
 	text-transform: uppercase;
@@ -45,9 +46,13 @@ div li {
 	margin-bottom: 3rem;
 	font-size: 1.3rem;
 }
-div a:hover{
+div li:hover{
 	background-color: #000000cc;
+	transition: 0.3s;
+}
+div a:hover{
 	color: #fff;
+	transition: 0.3s;
 }
 div{
 	text-align: center;
@@ -59,9 +64,13 @@ img{
 }
 body img{
 	background-position: center;
+	filter: grayscale();
 }
 .wrapper{
 	display: flex; 
+}
+#rngSize{
+	width: 51rem;
 }
 
 @media (min-width: 50rem){
