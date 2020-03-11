@@ -26,8 +26,8 @@ body {
 	padding-left: 1.9rem;
 }
 a{
-	text-decoration: none;
 	color: #000;
+	text-decoration: none;
 }
 div ul{
 	list-style: none;
@@ -48,9 +48,10 @@ div li {
 }
 div li:hover{
 	background-color: #000000cc;
+	color: #fff;
 	transition: 0.3s;
 }
-div a:hover{
+div li a:hover{
 	color: #fff;
 	transition: 0.3s;
 }
@@ -61,10 +62,10 @@ div{
 img{
 	align-items: center;
 	width: 100%;;
+	opacity: 100%;
 }
 body img{
 	background-position: center;
-	filter: grayscale();
 }
 .wrapper{
 	display: flex; 
