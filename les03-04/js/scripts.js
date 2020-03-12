@@ -14,3 +14,10 @@ menu.addEventListener('click', function() {
 rngSize.addEventListener('input', function() {
 	imgBig.style.filter = opacity(this.value);
 });
+menu.addEventListener('click', function(){
+	this.classList.add('grayscale');
+	this.classList.remove('Normale');
+	this.classList.remove('Sepia');
+	this.classList.remove('Hue');
+	this.classList.remove('Blur');
+});

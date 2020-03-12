@@ -73,6 +73,9 @@ body img{
 #rngSize{
 	width: 51rem;
 }
+.grayscale{
+	filter: 100%;
+}
 
 @media (min-width: 50rem){
 	.wrapper {
