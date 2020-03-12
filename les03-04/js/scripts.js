@@ -5,6 +5,12 @@
 *
 */
 
+'use strict'
+let van;
+let filters;
+
+let reset = function(){}
+
 let menu = document.querySelectorAll('.menu a');
 let rngSize = document.querySelector('#rngSize');
 let imgBig = document.querySelector('#imgBig');
@@ -12,7 +18,7 @@ menu.addEventListener('click', function() {
 	imgBig.style.filter = grayscale(100%);
 });
 rngSize.addEventListener('input', function() {
-	imgBig.style.filter = opacity(this.value);
+	imgBig.style.opacity =  this.value;
 });
 menu.addEventListener('click', function(){
 	this.classList.add('grayscale');

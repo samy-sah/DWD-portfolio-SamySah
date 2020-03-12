@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 <head>
-  <title>GeleAuto</title>
-  <meta charset="utf-8" />
-  <link rel="stylesheet" href="css/styles.css">
+	<meta charset="utf-8"/>
+	<title>GeleAuto</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <script src="js/my-script.js"></script>
-  <img src="img/van.jpg" alt="" id="imgBig">
-  <div class="Menu">
-    <ul>
-      <li><a href="#">Normal</a></li>
-      <li><a href="#">Grayscale</a></li>
-      <li><a href="#">Sepia</a></li>
-      <li><a href="#">Hue</a></li>
-      <li><a href="#">Blur</a></li>
-    </ul>
+	<div class="filter">
+		<img src="img/van.jpg" alt="Van" id="imgBig">
+		<ul class="filters">
+			<li><button class="filter active" id="filter-normal">normal</button></li>
+			<li><button class="filter" id="filter-gray">grayscale</button></li>
+			<li><button class="filter" id="filter-sepia">sepia</button></li>
+			<li><button class="filter" id="filter-hue">hue</button></li>
+			<li><button class="filter" id="filter-blur">blur</button></li>
+		</ul>
+		<label for="rngSize" id="slider-text">
+			<span>opacity:</span>
+			<input type="range" min="0" value="1" max="100" id="rngSize">
+			<span id="slider">100%</span>
+		</label>
 	</div>
-	<div class="wrapper">
-		<label>opacity: <input type="range" min="1" value="0" max="100" id="rngSize">100%</label>
-	</div>
+		<script src="js/scripts.js"></script>
 </body>
 </html>
