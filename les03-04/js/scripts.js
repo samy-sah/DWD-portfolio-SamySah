@@ -16,7 +16,7 @@ rngSize.addEventListener('input', function() {
 });
 menu.addEventListener('click', function(){
 	this.classList.add('grayscale');
-	this.classList.remove('Normale');
+	this.classList.remove('Normal');
 	this.classList.remove('Sepia');
 	this.classList.remove('Hue');
 	this.classList.remove('Blur');
