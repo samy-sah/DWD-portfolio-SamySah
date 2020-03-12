@@ -30,7 +30,8 @@ body {
 	align-items: center;
 	display: flex;
 	flex-flow: column nowrap;
-	max-width: 70rem;
+	max-width: 60rem;
+	margin: 0 auto;
 }
 .filters{
 	align-items: center;
@@ -38,11 +39,6 @@ body {
 	flex-flow: column nowrap;
 	list-style: none;
 	padding: 0;
-}
-div ul{
-	list-style: none;
-	text-align: center;
-	justify-content: center;
 }
 .filters button {
 	border: 1px solid;
@@ -59,12 +55,28 @@ button {
 	margin-bottom: 3rem;
 	text-transform: uppercase;
 	text-align: center;
-	width: 10rem;
+	width: 1rem;
 }
-button:hover{
+button:hover, .filter.active{
 	background-color: #000000cc;
 	color: #fff;
 	transition: 0.3s;
+}
+.gray{
+	filter: grayscale(1);
+}
+.sepia{
+	filter: sepia(1);
+}
+.hue{
+	filter: hue-rotate(100deg);
+}
+.blur{
+	filter: blur(7px);
+}
+#rngSize{
+	width: 40rem;
+	margin-top: 2rem;
 }
 div{
 	text-align: center;
@@ -77,8 +89,8 @@ body img{
 	background-position: center;
 }
 @media (min-width: 50rem){
-	button{
-
+	.filters{
+		flex-flow: row nowrap;
 	}
 	body{
 		width: 100rem;
