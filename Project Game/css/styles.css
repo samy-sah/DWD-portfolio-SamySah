@@ -1,0 +1,90 @@
+/**
+* General stylesheet 
+*
+*@author Samy Sah samy.sah@student.odisee.be>
+*
+*/
+
+/*=============================================
+* General
+===============================================*/
+html{
+	font-size: 0.625rem;
+}
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+/*=============================================
+* Body
+===============================================*/
+body{
+	background-color: #36743930;
+	display: flex;
+	font-family: Arial;
+	font-size: 1.4rem;
+	line-height: 2;
+	padding-left: 1.9rem;
+	padding-top: 1.9rem;
+}
+#canvas{
+	background-color: #396a3b;
+}
+.menu{
+	align-items: center;
+	display: flex;
+	flex-flow: column nowrap;
+	max-width: 60rem;
+}
+.menuGame{
+	align-items: center;
+	display: flex;
+	flex-flow: column nowrap;
+	list-style: none;
+	padding: 0;
+}
+.menu button{
+	border: 1px solid;
+	cursor: pointer;
+	margin: 1rem;
+	padding: 0.5rem 1rem;
+	min-width: 12rem;
+}
+button{
+	background-color: #396a3bb3;
+	cursor: pointer;
+	font-size: 1.3rem;
+	margin-left: 3rem;
+	margin-bottom: 3rem;
+	text-transform: uppercase;
+	text-align: center;
+	width: 1rem;
+}
+button:hover, .menu.active{
+	background-color: #0f3312;
+	color: #fff;
+	transition: 0.3s;
+}
+.information{
+	align-items: center;
+	display: flex;
+	flex-flow: column nowrap;
+	max-width: 60rem;
+	margin-top: 4rem;
+	list-style: none;
+	padding: 0.5rem;
+}
+p{
+}
+@media (min-width: 65rem){
+	.menuGame{ 
+		flex-flow: row nowrap;
+	}
+	body{
+		width: 100rem;
+	}
+	#canvas{
+		width: 100rem;
+	}
+}
