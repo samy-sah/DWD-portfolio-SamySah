@@ -84,9 +84,13 @@ body {
     max-width: 100%;
     padding: 2rem 2rem;
     position: absolute;
-    right: 10px;
-    top: -5px;
+    right: 1rem;
+    top: -32rem;
     width: 45rem;
+    transition: top 0.3s;
+}
+#loginmodal.show {
+    top: -0.5rem;
 }
 
 .modal__title {
