@@ -4,4 +4,10 @@
 *@author Samy Sah samy.sah@student.odisee.be>
 *
 */
-console.log('ok');
+
+(function() {
+  'use strict';
+  window.addEventListener('load', function(){
+  	const canvas = document.getElementById('canvas');
+  });
+});

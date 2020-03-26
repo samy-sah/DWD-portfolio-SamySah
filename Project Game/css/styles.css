@@ -86,6 +86,10 @@ button:hover, .menu.active{
 		width: 100rem;
 	}
 }
+
+/*
+* Code van de presentatie van de leerkracht
+*/
 #snake {
 	width: 10rem;
 	height: 13rem;
