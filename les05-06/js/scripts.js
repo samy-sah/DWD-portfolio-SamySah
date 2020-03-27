@@ -1,82 +1,114 @@
 /**
 * General script
 *
-*@author Samy Sah samy.sah@student.odisee.be>
+*@author Samy Sah 
+*<samy.sah@student.odisee.be>
 *
 */
-(function(){
+;(function(){
 	'use strict';
-	window.addEventListener('load', function(){
-		let btnLogin = document.querySelector('#btnLogin');
-		let btnCancel = document.querySelector('#btnCancel');
-		let loginmodal = document.querySelector('#loginmodal');
-		let login__form = document.querySelector('#login__form');
-		let lnkFirst = document.querySelector('#lnkFirst');
-		let lnkPrev = document.querySelector('#lnkPrev');
-		let lnkPlay = document.querySelector('#lnkPlay');
-		let lnkNext = document.querySelector('#lnkNext');
-		let lnkLast = document.querySelector('#lnkLast');
-		let images = document.querySelectorAll('.main__thumbs a');
-		let large = document.querySelector('#large__figure');
-		let photos = large.querySelector('img');
-		btnLogin.addEventListener('click', function(e){
-			e.preventDefault();
-			loginmodal.classList.add('show');
-		});
-		btnCancel.addEventListener('click', function(e){
-			e.preventDefault();
-			loginmodal.classList.remove('show');
-			loginmodal.classList.add('hide');
-		});
-		login__form.setAttribute('novalidate', 'novalidate');
-		
-		login__form.addEventListener('submit', function(e) {
 
+	// =====================================
+	// Login form
+	// =====================================
+
+	// open/close
+	let btnLogin = document.querySelector('#btnLogin');
+	let btnCancel = document.querySelector('#btnCancel');
+	let loginmodal = document.querySelector('#loginmodal');
+	btnLogin.addEventListener('click', function(e){
+		e.preventDefault();
+		loginmodal.classList.add('show');
+	});
+	btnCancel.addEventListener('click', function(e){
+		e.preventDefault();
+		loginmodal.classList.remove('show');
+		loginmodal.classList.add('hide');
+	});
+		
+	// =====================================
+	// Form checking
+	// =====================================
+
+	let frmLogin = document.querySelector('#login__form');
+	let inpUname = document.querySelector('#inpUname');
+	let errUname = document.querySelector('#errUname');
+
+	frmLogin.setAttribute('novalidate', 'novalidate');
+	frmLogin.addEventListener('submit', function(e) {
+		
 		// halt event
 		e.preventDefault();
 
 		// all ok for now
 		let valid = true;
 
-		// perform checks here
-		let inpUname = document.querySelector('#inpUname');
-		let errUname = document.querySelector('#errUname');
-
-		let inpPass = document.querySelector('#inpPass');
-		let errPass = document.querySelector('#errPass');
-
-		// hide error message
-		errUname.innerHTML = '&nbsp;';
-
-		if (inpUname.value == ''){
-			valid = false;
-			errUname.innerHTML = 'Gelieve een juiste email in te vullen';
-		}
-
-		// hide error message
-		errPass.innerHTML = '&nbsp;';
-
-		if (inpPass.value == ''){
-			valid = false;
-			errPass.innerHTML = 'Gelieve een wachtwoord in te vullen';
-		}
-
+		errUname.innerHTML = '';
 		// draw conclusion
-		if (isValid) {
-			console.log('all ok');
-		} else {
-			console.log('form contains errors');
+		if (inpUname.innerHTML = '') {
+			errUname.innerHTML = 'Gelieve een naam in te geven';
+			valid = false;
 		}
+		if (valid) this.submit();
 	});
-		for (let image of images){
-			let link = image.querySelector('a');
-			let img = image.querySelector('img');
-			lnkNext.addEventListener('click', function(e) {
-				photos.src = link.href;
-				photos.alt = img.alt;
-				document.querySelector('.main__thumbs active').classList.remove('active');
-				image.classList.add('active');
-			});
+	
+
+	// =====================================
+	// Slideshow
+	// =====================================
+
+	let lnkFirst = document.querySelector('#lnkFirst');
+	let lnkPrev = document.querySelector('#lnkPrev');
+	let lnkNext = document.querySelector('#lnkNext');
+	let lnkLast = document.querySelector('#lnkLast');
+	let imgBig = document.querySelector('#large__figure img');
+	let txtTitle = document.querySelector('#large__figure .large__title');
+	let thumbs = document.querySelectorAll('.main__thumbs figure');
+	let currThumb = 0;
+
+	lnkFirst.addEventListener('click', function (e){
+		e.preventDefault();
+		currThumb = 0;
+	})
+	lnkPrev.addEventListener('click', function (e){
+		e.preventDefault();
+		if (currThumb > 0) currThumb--;
+	})
+	lnkNext.addEventListener('click', function (e){
+		e.preventDefault();
+		if (currThumb < thumbs.length - 1) currThumb++;
+		let thumb = thumbs[currThumb];
+		let thumbLink = thumb.querySelector('a');
+		let thumbImg = thumb.querySelector('img');
+		imgBig.src = thumbLink.href;
+		txtTitle.innerHTML = thumbImg.alt;
+		thumb.classList.add('active');
+	})
+	lnkLast.addEventListener('click', function (e){
+		e.preventDefault();
+		currThumb = thumbs.length - 1;
+	})
+
+	
+	// =====================================
+	// Filtering
+	// =====================================
+
+	let selAlbum = document.querySelector('#selAlbum');
+	let btnSearch = document.querySelector('#btnSearch');
+
+	let doFilter = function(){
+		for (let thumb of thumbs){
+			thumb.classList.remove('hide');
 		}
-	});
+
+		if (selAlbum.value != -1){
+			for (let thumb of thumbs){
+				let thumbAlbumId = thumb.getAttribute('data-albumid');
+				if (thumbAlbumId != selAlbum.value) thumb.classList.add('hide');
+			}
+		}
+	}
+	selAlbum.addEventListener('select', doFilter);
+	btnSearch.addEventListener('select', doFilter);
 })();
