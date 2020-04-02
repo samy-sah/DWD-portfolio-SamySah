@@ -61,6 +61,7 @@
 	let lnkPrev = document.querySelector('#lnkPrev');
 	let lnkNext = document.querySelector('#lnkNext');
 	let lnkLast = document.querySelector('#lnkLast');
+	let lnkPlay = document.querySelector('#lnkPlay');
 	let imgBig = document.querySelector('#large__figure img');
 	let txtTitle = document.querySelector('#large__figure .large__title');
 	let thumbs = document.querySelectorAll('.main__thumbs figure');
@@ -69,10 +70,47 @@
 	lnkFirst.addEventListener('click', function (e){
 		e.preventDefault();
 		currThumb = 0;
+		let thumb = thumbs[currThumb];
+		let thumbLink = thumb.querySelector('a');
+		let thumbImg = thumb.querySelector('img');
+		imgBig.src = thumbLink.href;
+		txtTitle.innerHTML = thumbImg.alt;
+		thumb.classList.add('active');
+	})
+	lnkPlay.addEventListener('click', function (e){
+		e.preventDefault();
+		currThumb;
+		let thumb = thumbs[currThumb];
+		let thumbLink = thumb.querySelector('a');
+		let thumbImg = thumb.querySelector('img');
+		imgBig.src = thumbLink.href;
+		txtTitle.innerHTML = thumbImg.alt;
+		thumb.classList.add('active');
 	})
 	lnkPrev.addEventListener('click', function (e){
 		e.preventDefault();
 		if (currThumb > 0) currThumb--;
+		let thumb = thumbs[currThumb];
+		let thumbLink = thumb.querySelector('a');
+		let thumbImg = thumb.querySelector('img');
+		imgBig.src = thumbLink.href;
+		txtTitle.innerHTML = thumbImg.alt;
+		thumb.classList.add('active');
+	})
+	document.addEventListener('keydown', function (e){
+		e.preventDefault();
+		let thumb = thumbs[currThumb];
+		let thumbLink = thumb.querySelector('a');
+		let thumbImg = thumb.querySelector('img');
+		if(e.keyCode == 37 && currThumb > 0){
+			currThumb--;
+		}
+		if(e.keyCode == 39 && currThumb < thumbs.length -1){
+			currThumb++;
+		}
+		imgBig.src = thumbLink.href;
+		txtTitle.innerHTML = thumbImg.alt;
+		thumb.classList.add('active');
 	})
 	lnkNext.addEventListener('click', function (e){
 		e.preventDefault();
@@ -87,6 +125,12 @@
 	lnkLast.addEventListener('click', function (e){
 		e.preventDefault();
 		currThumb = thumbs.length - 1;
+		let thumb = thumbs[currThumb];
+		let thumbLink = thumb.querySelector('a');
+		let thumbImg = thumb.querySelector('img');
+		imgBig.src = thumbLink.href;
+		txtTitle.innerHTML = thumbImg.alt;
+		thumb.classList.add('active');
 	})
 
 	
