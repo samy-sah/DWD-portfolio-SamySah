@@ -120,6 +120,7 @@
 		let thumbImg = thumb.querySelector('img');
 		imgBig.src = thumbLink.href;
 		txtTitle.innerHTML = thumbImg.alt;
+		document.querySelector('.main__thumbs .active').classList.remove('active')
 		thumb.classList.add('active');
 	})
 	lnkLast.addEventListener('click', function (e){
