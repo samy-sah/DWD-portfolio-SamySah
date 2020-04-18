@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Fetch - JSON</title>
+    <meta name="author" content="Steven" />
+    <meta name="author" content="Rogier" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Fetch API oefening</h1>
+    <p>oefening gebaseerd op de <a href="https://www.songsterr.com/a/wa/api">songsterr API</a></p>
+
+    <form id="frmSearch">
+        <label>
+            <input type="text" id="inpArtist" placeholder="artiest of groepsnaam"> 
+            <button id="btnSearch" class="button button--full">Zoek Artiest</button>
+        </label>
+    </form>    
+
+    <div id="results">
+        <table id="songs" cellpadding="0" cellspacing="0" class="hidden">
+            <thead>
+                <tr>
+                    <th>Titel</th>
+                    <th>Artiest</th>
+                    <th>Partituren</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <img src="img/ajax-loader-3.gif" id="spinner" class="hidden">
+        <p class="message">&nbsp;</p>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

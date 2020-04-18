@@ -1,0 +1,129 @@
+/*
+ * Common styles
+ *
+ * @author Rogier van der Linde <rogier.vanderlinde@odisee.be>
+ */
+
+/* ===========================================
+    General
+    =========================================== */
+
+html {
+    font-size: 62.5%;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 1.6rem;
+    background-color: lightgrey;
+    padding: 2rem;
+}
+
+h1 {
+    margin-bottom: 1rem;
+}
+
+h1 + p {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ===========================================
+    Table
+    =========================================== */
+
+table {
+    border-spacing: 0;
+}
+
+th, td {
+    padding: 0.5em 1em;
+}
+
+tr:nth-child(even) {
+    background-color: #999;
+}
+
+/* ===========================================
+    Loader
+    =========================================== */
+
+#results {
+    position: relative;
+}
+
+#loader {
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+}
+
+/* ===========================================
+    Form
+    =========================================== */
+
+/* form */
+
+form {
+    margin: 4rem 0;
+}
+
+/* search field */
+
+input[type=text] {
+    font-size: 1.4rem;
+    margin-right: 1rem;
+    padding: 1rem 1.4rem;
+}
+
+a {
+    color: rgba(165,42,42,1);
+}
+
+/* buttons */
+
+.button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.3rem;
+    height: 3.6rem;
+    letter-spacing: .5px;
+    line-height: 3.6rem;
+    padding: 0 1.6rem;
+    transition: background .3s ease-out;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+/* buttons, full */
+
+.button--full {
+    background-color: rgba(255, 64, 129, 1);
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 
+        0 3px 1px -2px rgba(0, 0, 0, 0.12), 
+        0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+.button--full:hover, 
+.button--full:focus, 
+.button--full.active {
+    background-color: rgba(255, 64, 129, 0.8);
+}
+
+

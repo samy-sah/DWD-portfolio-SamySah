@@ -2,30 +2,35 @@
 <html lang="nl">
 <head>
 	<meta charset="utf-8"/>
-	<title>Snake Game</title>
+	<title>Mep de mol</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-	<canvas id="canvas" width="400" height="350"></canvas>
 	<div class="menu">
-		<h1>Snake Game</h1>
-		<div id="scene">
-		<img src="images/sn.png" alt="snake" id="snake">
-		<img src="images/s.png" alt="snake" id="snake">
-		<img src="images/s.png" alt="snake" id="snake">
-		</div>
-		<ul class="menuGame">
-			<li><button class="menu active" id="menu-start">start</button></li>
-			<li><button class="menu" id="menu-pause">pause</button></li>
-			<li><button class="menu" id="menu-reset">reset</button></li>
-		</ul>
+		<h1>Mep de mol</h1>
+		<img src="images/logo.png" alt="mol1" id="mol1">
+		<img src="images/logo.png" alt="mol1" id="mol1">
+		<img src="images/logo.png" alt="mol1" id="mol1">
 		<div class="information">
-			<h3>Controls</h3>
-			<p><strong>Move Up:</strong> Z / Up ArrowKey</p>
-			<p><strong>Move Down:</strong> S / Down ArrowKey</p>
-			<p><strong>Move Right:</strong> D / Right ArrowKey</p>
-			<p><strong>Move Left:</strong> Q / Left ArrowKey</p>
+			<h3>Jouw score:</h3>
+			<h3 id="score">0</h3>
+		
+			<h3>Resterend Tijd:</h3>
+			<h3 id="tijd">30</h3>
+			<ul class="menuGame">
+				<li><button class="menu active" id="menu-start">start</button></li>
+				<li><button class="menu" id="menu-pause">pause</button></li>
+				<li><button class="menu" id="menu-reset">reset</button></li>
+			</ul>
+			<div class="grid">
+				<div class="square molS" id="1"></div>
+				<div class="square" id="2"></div>
+				<div class="square" id="3"></div>
+				<div class="square" id="4"></div>
+				<div class="square" id="5"></div>
+				<div class="square" id="6"></div>
+			</div>
 		</div>
 	</div>
 	<script src="js/scripts.js"></script>

@@ -25,17 +25,21 @@ body{
 	font-family: Arial;
 	font-size: 1.4rem;
 	line-height: 2;
+	justify-content: center;
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: 1.9rem;
 	padding-left: 1.9rem;
-	padding-top: 1.9rem;
 }
-#canvas{
-	background-color: #396a3b;
+div{
+	text-align: center;
+	justify-content: center;
 }
-.menu{
-	align-items: center;
-	display: flex;
-	flex-flow: column nowrap;
-	max-width: 60rem;
+img{
+	max-width: 100%;
+}
+body img{
+	background-position: center;
 }
 .menuGame{
 	align-items: center;
@@ -44,7 +48,7 @@ body{
 	list-style: none;
 	padding: 0;
 }
-.menu button{
+.menuGame button{
 	border: 1px solid;
 	cursor: pointer;
 	margin: 1rem;
@@ -75,6 +79,21 @@ button:hover, .menu.active{
 	list-style: none;
 	padding: 0.5rem;
 }
+.square {		
+	border-color: black;
+	border-style: solid;
+	width: 15rem;
+	height: 15rem;
+
+}
+.grid {
+	align-content: center;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	width: 55rem;
+	height: 35rem;
+}
 @media (min-width: 65rem){
 	.menuGame{ 
 		flex-flow: row nowrap;
@@ -82,15 +101,12 @@ button:hover, .menu.active{
 	body{
 		width: 100rem;
 	}
-	#canvas{
-		width: 100rem;
-	}
 }
 
 /*
 * Code van de presentatie van de leerkracht
 */
-#snake {
+#mol1 {
 	width: 10rem;
 	height: 13rem;
 	animation: spin 8s infinite linear;
@@ -99,4 +115,8 @@ button:hover, .menu.active{
 	from{ transform: rotateY(0); }
 	to{ transform: rotateY(-360deg); 
 	}
+}
+.molS {
+	background-image: url(../images/molS.png);
+	background-size: cover;
 }
