@@ -20,9 +20,9 @@ html{
 * Body
 ===============================================*/
 body{
-	background-color: #36743930;
+	background-color: #8a5e3bba;
 	display: flex;
-	font-family: Arial;
+	font-family: 'Open Sans', sans-serif;	
 	font-size: 1.4rem;
 	line-height: 2;
 	justify-content: center;
@@ -56,7 +56,7 @@ body img{
 	min-width: 12rem;
 }
 button{
-	background-color: #396a3bb3;
+	background-color: #8a5e3bba;
 	cursor: pointer;
 	font-size: 1.3rem;
 	margin-left: 3rem;
@@ -66,7 +66,7 @@ button{
 	width: 1rem;
 }
 button:hover, .menu.active{
-	background-color: #0f3312;
+	background-color: #000;
 	color: #fff;
 	transition: 0.3s;
 }
@@ -79,20 +79,24 @@ button:hover, .menu.active{
 	list-style: none;
 	padding: 0.5rem;
 }
-.square {		
+.grid-item {		
 	border-color: black;
 	border-style: solid;
 	width: 15rem;
 	height: 15rem;
 
 }
-.grid {
+.grid-container {
 	align-content: center;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
 	width: 55rem;
 	height: 35rem;
+}
+.mod { 
+	width: 14rem;
+	margin-top: 12.3rem;
 }
 @media (min-width: 65rem){
 	.menuGame{ 
@@ -119,4 +123,5 @@ button:hover, .menu.active{
 .molS {
 	background-image: url(../images/molS.png);
 	background-size: cover;
+	background-position: center;
 }
