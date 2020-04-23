@@ -120,8 +120,8 @@ button:hover, .menu.active{
 	to{ transform: rotateY(-360deg); 
 	}
 }
-.molS {
-	background-image: url(../images/molS.png);
+.mol {
+	background-image: url(../images/mol.png);
 	background-size: cover;
 	background-position: center;
 }

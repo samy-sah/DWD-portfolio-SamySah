@@ -1,29 +1,44 @@
-let base = "https://www.songsterr.com/a/ra/songs/byartists.json?artists=%22elton%20john%22";
-let frmSearch = document.querySelector('#frmSearch');
-let inpArtist = document.querySelector('#inpArtist');
-let btnSearch = document.querySelector('#btnSearch');
-let results = document.querySelector ('#results');
-let spinner = document.querySelector ('#spinner');
-
-btnSearch.addEventListener('click', function(e){
-    e.preventDefault();
-    let searchval = inpArtist.nodeValue;
-    let params = new URLSearchParams();
-    params.append('method', 'artists.songs.search');
-    params.append('extras', 'url_m');
-    params.append('per_page', 20);
-    params.append('format', 'json');
-    params.append('nojsoncallback', 1);
-    params.append('api_key', '6ecfcd8d4a3b8a04da6093733db989a2');
-    params.append('text', searchval);
-    let url = base + params.toString();
+(function(){
+    'use strict';
     
-    // AJAX call
-    fetch(url)
-    .then(function(resp){
+    window.addEventListener('load', function(){
+        let frmSearch = document.querySelector('#frmSearch');
+        let inpArtist = document.querySelector('#inpArtist');
+        let btnSearch = document.querySelector('#btnSearch');
+        let tblResults = document.querySelector('#results table');
+        let spinner = document.querySelector ('#spinner');
+        let tblBody = document.querySelector ('tbody');
+        let message = document.querySelector ('#results .message');
         
+        function handleResults(results){
+            message.innerHTML = results.length + ' songs found';
+            let html = '';
+            for(let row of results){
+                html += '<tr>';
+                ///
+                html += '</tr>';
+                tblBody.innerHTML;
+            }
+        }
+        frmSearch.addEventListener('click', function(e){
+            e.preventDefault();
+            let valSearch = inpArtist.value;
+            spinner.classList.remove('hidden');
+
+            let url = 'https://www.songsterr.com/a/ra/songs/byartists.json?artists=${valSearch}';
+            // AJAX call
+            fetch(url)
+            // handle response 
+            .then(function(resp){
+                return resp.json();
+            })
+            // handle response data
+            .then(function handleSuccess(data){
+                handleResults(data);
+            })
+            .catch(function(err) {
+                console.log('Request failed', err)
+            });
+        });
     })
-    .catch(function(err) {
-        console.log('Request failed', err)
-    });    
-})
+})();
