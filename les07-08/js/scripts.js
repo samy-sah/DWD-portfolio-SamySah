@@ -25,7 +25,7 @@
             let valSearch = inpArtist.value;
             spinner.classList.remove('hidden');
 
-            let url = 'https://www.songsterr.com/a/ra/songs/byartists.json?artists=${valSearch}';
+            let url = `https://www.songsterr.com/a/ra/songs/byartists.json?artists=${valSearch}`;
             // AJAX call
             fetch(url)
             // handle response 
