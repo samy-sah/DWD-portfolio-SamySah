@@ -17,14 +17,14 @@
     <div class="main-url">
         <div class="container">
             <form>
-                <input type="text" placeholder="Image URL" id="url"/>
+                <input type="text" placeholder="URL (copy image address)" id="url"/>
                 <button id="btn" type="button">Load Image</button>    
             </form>
         </div>
     </div>
     <main class="container">
         <div class="main__sheet">
-            <img src="img/foto1.jpg" alt="" id="inFoto">    
+            <img src="img/load.png" alt="" id="inFoto">    
         </div>
         <section class="edit">
             <ul class="settings">
@@ -56,11 +56,11 @@
                     <br>
                     <label for="rngSize" id="slider-text">
                         <span>opacity:</span>
-                        <input type="range" min="0" max="100" step="0.05" id="rngSize" value="0" class="slider" >
-                        <span id="percent">100%</span>
+                        <input type="range"  min="0" max="1" step="0.05" id="rngSize" value="0" class="slider" >
+                        <span id="slider1-val"></span>
                     </label>
                     <br>
-                    <label>Kleur: <input type="color" value="#990000" id="inpColor">
+                    <label>Color: <input type="color" value="#990000" id="inpColor">
                     </label>
                     <br>
                 </form>
