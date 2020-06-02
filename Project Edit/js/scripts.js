@@ -6,6 +6,33 @@
 */
 (function(){
     'use strict';
+    
+    // =====================================
+    // Titel effect
+    // =====================================
+    const title = document.querySelector('.effect');
+    const textH = title.textContent;//Om de titel van de pagina te kunnen opvragen
+    const divideText = textH.split("");//Begin van onze effect
+    title.textContent = "";
+
+    for(let i=0; i< divideText.length; i++){ // om een loop te kunnen creeren
+        title.innerHTML += "<span>" + divideText[i] + "</span>";
+    }
+    
+    let letter = 0; // Om te starten vanaf de eerste letter namelijk "E"
+    let onDo = function(){
+        const span = title.querySelectorAll('span')[letter];
+        span.classList.add('vervang');
+        letter++
+        if(letter === divideText.length){
+            end();
+        }
+    }
+    let timer = setInterval(onDo, 65);
+    let end = function(){
+        clearInterval(timer);
+        timer = null;
+    }
     // =====================================
 	// Filters en sliders
     // =====================================
@@ -23,15 +50,9 @@
     let sliderVal = document.querySelector('#slider1-val');
     let color = document.querySelector('#inpColor');
     
-    let applyAll = function() {
-        inFoto.style.color = color.value;
-    }
-    // attach events
-    color.addEventListener('change', applyAll);
-
     rngSize.addEventListener('input', function(){
-		sliderVal.innerHTML = parseInt(this.value * 100) + '%';
-		inFoto.style.opacity = this.value;
+		sliderVal.innerHTML = parseInt(this.value * 100) + '%'; // change the content
+		inFoto.style.opacity = this.value; // change css properties
     });
 
     reset.addEventListener('click', function(e) {
@@ -47,18 +68,19 @@
     
     window.addEventListener('load', function(){
         let btn = document.querySelector('#btn');
-        let inFoto = document.getElementById('inFoto');
+        let inFoto = document.getElementById('inFoto'); // element with id 'inFoto'            
+        let url = document.getElementById('url'); // element with id 'url' 
         btn.addEventListener('click', function(e){
             e.preventDefault();
-            let url = document.getElementById('url');
-            let urliVal = url.value;
-            inFoto.setAttribute('src',urliVal);
+            let urliVal = url.value; // displays the URL of the URL field.
+            inFoto.src = urliVal;
         });
     });
+    // LOCALE STORAGE NOG MAKEN EN OPZOEKEN !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     let myfile = document.querySelector('#myfile');
-    let imageE = document.querySelector('#inFoto');
     myfile.addEventListener('change', function() {
-        let url = URL.createObjectURL(myfile.files[0]);
-        inFoto.src = url;
+        let url = URL.createObjectURL(myfile.files[0]); // A File, Blob or MediaSource object for which an object URL will be created.
+        // returns a File object at the index 0
+        inFoto.src = url; // displays the value of the src attribute of the image.
     });
 })();
