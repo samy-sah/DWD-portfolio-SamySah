@@ -8,7 +8,7 @@
     'use strict';
     
     // =====================================
-    // Titel effect
+    // Titel effect 
     // =====================================
     const title = document.querySelector('.effect');
     const textH = title.textContent;//Om de titel van de pagina te kunnen opvragen
