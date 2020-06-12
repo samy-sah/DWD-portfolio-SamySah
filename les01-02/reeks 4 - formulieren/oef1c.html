@@ -64,7 +64,7 @@
 		<p id="pStyles">Stijlen: <span>(geen geselecteerd)</span></p>
 	</div>
 	<script>
-	let inpSearch = document.querySelector('#inpSearch');
+		let inpSearch = document.querySelector('#inpSearch');
 		let selType = document.querySelector('#selType');
 		let btnFilter = document.querySelector('#btnFilter');
 		let pSearch = document.querySelector('#pSearch');
@@ -76,6 +76,13 @@
 		let pStyles = document.querySelector('#pStyles');
 		let checkedRadio = document.querySelector('.categories input[type=radio]:checked');
 		let btnClear = document.querySelector('#btnClear');
+		btnClear.addEventListener('click', function(e) {
+			e.preventDefault();
+			inpSearch.value = '';
+			selType.selectedIndex = 0;
+			radiolist.checked = false;
+			checkboxlist.checked = false;
+		});
 		btnFilter.addEventListener('click', function(e) {
 			e.preventDefault();
 			pSearch.innerHTML = 'Zoekterm: ' + inpSearch.value

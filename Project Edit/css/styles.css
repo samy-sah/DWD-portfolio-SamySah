@@ -172,6 +172,7 @@ input, label {
 	opacity: 1;
 }
 
+/*https://www.w3schools.com/howto/howto_js_rangeslider.asp*/
 .slider::-webkit-slider-thumb {		
 	appearance: none;
 	background-color: #2c3f55;
@@ -221,3 +222,18 @@ button:focus{
 	min-width: 12rem;
 	padding: 0.5rem 0rem;
 }
+/*=============================================
+*filters
+===============================================*/
+/* .grayscale{
+	filter: grayscale(100%);
+}
+.sepia{
+	filter: sepia();
+}
+.hue{
+	filter: hue-rotate(deg);
+}
+.blur{
+	filter: blur(px);
+} */
