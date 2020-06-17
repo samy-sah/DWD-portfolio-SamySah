@@ -6,7 +6,8 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- <script src="https://kit.fontawesome.com/c126ecb91a.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://kit.fontawesome.com/c126ecb91a.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -14,59 +15,62 @@
             <h1 class="effect">Edit Your Images</h1>
         </div>
     </header>
-    <div class="main-url">
+    <div class="url">
         <div class="container">
             <form>
-                <input type="text" placeholder="URL (copy image address)" id="url"/>
-                <button id="btn" type="button">Load Image</button>    
+                <label for="myfile">Choose a Image:</label>
+                <input type="file" id="myfile" name="myfile">   
             </form>
         </div>
     </div>
     <main class="container">
-        <div class="main__sheet">
-            <img src="img/load.png" alt="" id="inFoto">    
+        <div id="resizable" class="ui-widget-content">
+            <img src="img/load.png" alt="" id="inFoto">
         </div>
         <section class="edit">
             <ul class="settings">
-                <li><button class="menu" id="save">save</button></li>
+                <li><button class="menu" id="save">download</button></li>
                 <li><button class="menu" id="reset">reset</button></li>
+                <li><button class="menu" id="remove">remove</button></li>
+                <li><button class="menu" id="saveEffect">Save the effect</button></li>
             </ul>
-            <label for="myfile">Choose a Photo:</label>
-            <input type="file" id="myfile" name="myfile">
             <h2>Filters</h2>
             <div class="sliders">
-                <form id="options">
-                    <!-- <label for="normal">Normal</label>
-                    <input name="normal" type="range" min="0" max="100" id="normal" value="0" class="slider">
-                    <br> -->
+                <div id="options">
+                    <label for="brightness">Brightness</label>
+                    <input name="brightness" type="range" min="0" max="100" id="brightness" value="100" class="slider">
+                    <br>
                     <label for="grayscale">Grayscale</label>
                     <input name="grayscale" type="range" min="0" max="100" id="grayscale" value="0" class="slider">
-                    <br>
-                    <label for="brightness">Brightness</label>
-                    <input name="brightness" type="range" min="0" max="100" id="brightness" value="0" class="slider">
                     <br>
                     <label for="blur">Blur</label>
                     <input name="blur" type="range" min="0" max="100" id="blur" value="0" class="slider">
                     <br>
-                    <label for="hue">Hue</label>
-                    <input name="hue" type="range" min="0" max="100" id="hue" value="0" class="slider">
+                    <label for="invert">invert</label>
+                    <input name="invert" type="range" min="0" max="100" id="invert" value="0" class="slider">
                     <br>
                     <label for="sepia">Sepia</label>
                     <input name="sepia" type="range" min="0" max="100" id="sepia" value="0" class="slider">
                     <br>
-                    <label for="rngSize" id="slider-text">
-                        <span>opacity:</span>
-                        <input type="range"  min="0" max="1" step="0.05" id="rngSize" value="0" class="slider" >
-                        <span id="slider1-val"></span>
-                    </label>
+                    <label for="contrast">contrast</label>
+                    <input name="contrast" type="range" min="0" max="100" id="contrast" value="100" class="slider">
                     <br>
-                    <label>Color: <input type="color" value="#990000" id="inpColor">
-                    </label>
+                    <label for="opacity">opacity</label>
+                    <input name="opacity" type="range" min="0" max="100" id="opacity" value="100" class="slider">
                     <br>
-                </form>
+                </div>
             </div>
+            <canvas width="380" height="547"></canvas>
         </section>
     </main>
+    <!-- https://jqueryui.com/resizable/ -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $( function() {
+        $( "#resizable" ).resizable();
+    });
+    </script>
     <script src="js/scripts.js"></script>
 </body>
 </html>
