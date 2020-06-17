@@ -86,16 +86,16 @@
 
     // store image in localstorage
     img.addEventListener('load', function() {
-      localStorage.setItem("todoData", this.src);
+      localStorage.setItem("imageData", this.src);
     });   
-    if (localStorage.getItem("todoData")) {
-      img.src = localStorage.getItem("todoData");
+    if (localStorage.getItem("imageData")) {
+      img.src = localStorage.getItem("imageData");
       
     }
 
     // remove localstorage
     remove.addEventListener('click', function(){
-        img.src = localStorage.removeItem("todoData");
+        img.src = localStorage.removeItem("imageData");
     });
     
     // save filter and put it into the canvas
