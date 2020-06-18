@@ -49,6 +49,7 @@
     let sepia = document.getElementById('sepia');
     let contrast = document.getElementById('contrast');
     let opacity = document.getElementById('opacity');
+    let resizable = document.getElementById("resizable");
 
     // apply filters
     let effect = function(){
@@ -65,7 +66,8 @@
     // reset sliders and canvas
     reset.addEventListener('click', function(e) {
         e.preventDefault();
-        img.style = '';
+        img.style = "";
+        resizable.style = " max-width: 100%; max-height: 45rem; "
         grayscale.value = '0';
         brightness.value = '100';
         blur.value = '0';
@@ -74,7 +76,7 @@
         contrast.value ='100';
         opacity.value ='100';
         let context = canvases.getContext('2d');
-        context.clearRect(10, 10, canvases.width, canvases.height);
+        context.clearRect(0, 0, canvases.width, canvases.height);
     });
 
     // store image in localstorage
@@ -94,18 +96,26 @@
     // save filter and put it into the canvas
     document.getElementById('saveEffect').addEventListener('click', function() {
         let context = canvases.getContext('2d');
-        context.clearRect(10, 10, canvases.width, canvases.height);
+        context.clearRect(0, 0, canvases.width, canvases.height);
         context.filter = getComputedStyle(img).getPropertyValue('filter');
-        context.drawImage(img,10, 10, img.width, img.height);
+        let schaal = Math.min(canvases.width / img.width, canvases.height / img.height);
+        // om de positie van de afbeelding linksboven te verkrijgen
+        let hori = (canvases.width / 2) - (img.width / 2) * schaal;
+        let verti = (canvases.height / 2) - (img.height / 2) * schaal;
+        context.drawImage(img, hori, verti, img.width * schaal, img.height * schaal);      
     });
     // save filter with enter key
     document.addEventListener('keydown', function(e){
         e.preventDefault();
         if(e.keyCode == 13){
             let context = canvases.getContext('2d');
-            context.clearRect(10, 10, canvases.width, canvases.height);
+            context.clearRect(0, 0, canvases.width, canvases.height);
             context.filter = getComputedStyle(img).getPropertyValue('filter');
-            context.drawImage(img,10, 10, img.width, img.height);        
+            let schaal = Math.min(canvases.width / img.width, canvases.height / img.height);
+            // om de positie van de afbeelding linksboven te verkrijgen
+            let hori = (canvases.width / 2) - (img.width / 2) * schaal;
+            let verti = (canvases.height / 2) - (img.height / 2) * schaal;
+            context.drawImage(img, hori, verti, img.width * schaal, img.height * schaal);      
         }
     });
 

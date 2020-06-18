@@ -86,8 +86,11 @@ canvas {
 	margin: 1rem 0;
 	border-radius: 1.5rem;
 	height: 45rem;
+	object-fit: cover;
     max-width: 100%;
-    max-height: 100%;
+	max-height: 100%;
+	width:"380"; 
+	height:"547";
 }
 img {
 	border-radius: 1.5rem;
@@ -239,8 +242,8 @@ button:focus{
 .url input[type="file"] {
 	height: 4rem;
     position: absolute;
-    opacity: 0;
-    position: absolute;
+	visibility: hidden; 
+	position: absolute;
     top: 19rem;
     right: 3rem;
 }
