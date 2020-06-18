@@ -24,19 +24,17 @@
         </div>
     </div>
     <main class="container">
-        <div id="resizable" class="ui-widget-content">
-            <img src="img/load.png" alt="" id="inFoto">
-        </div>
-        <section class="edit">
             <ul class="settings">
                 <li><button class="menu" id="save">download</button></li>
                 <li><button class="menu" id="reset">reset</button></li>
                 <li><button class="menu" id="remove">remove</button></li>
                 <li><button class="menu" id="saveEffect">Save the effect</button></li>
             </ul>
-            <h2>Filters</h2>
+            <p class="help">Press ENTER to save the filter(s)</p>
+            <section class="edit">
             <div class="sliders">
                 <div id="options">
+                    <h2>Filters</h2>
                     <label for="brightness">Brightness</label>
                     <input name="brightness" type="range" min="0" max="100" id="brightness" value="100" class="slider">
                     <br>
@@ -61,7 +59,11 @@
                 </div>
             </div>
             <canvas width="380" height="547"></canvas>
-        </section>
+            <div id="resizable" class="ui-widget-content">
+                <img src="img/load.png" alt="" id="inFoto">
+                <figcaption>resize image here</figcaption>
+            </div>
+        </section> 
     </main>
     <!-- https://jqueryui.com/resizable/ -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>

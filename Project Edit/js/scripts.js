@@ -8,29 +8,31 @@
     'use strict';
     // =====================================
     // Titel effect 
+    // inspiratie https://stackoverflow.com/questions/36806228/how-to-animate-text-without-dividing-letters-in-spans
+    // https://www.freecodecamp.org/forum/t/setinterval-and-javascript-animation/172709/6
     // =====================================
     const title = document.querySelector('.effect');
-    const textH = title.textContent;//Om de titel van de pagina te kunnen opvragen
-    const divideText = textH.split("");//Begin van onze effect
-    title.textContent = "";
+    const textH = title.textContent;//Om de titel van de pagina te kunnen opvragen zonder de class
+    const divideText = textH.split('');//splits de titel van de pagina letter per letter
+    title.textContent = ""; // zodat de h1 wordt gereset
 
     for(let i=0; i< divideText.length; i++){ // om een loop te kunnen creeren
-        title.innerHTML += "<span>" + divideText[i] + "</span>";
+        title.innerHTML += "<span class='span'>" + divideText[i] + "</span>"; // generate span 
     }
     
     let letter = 0; // Om te starten vanaf de eerste letter namelijk "E"
     let onDo = function(){
-        const span = title.querySelectorAll('span')[letter];
-        span.classList.add('vervang');
-        letter++
-        if(letter === divideText.length){
+        const span = title.querySelectorAll('span')[letter]; // neem alle span van boven van 0 tot het einde
+        span.classList.add('vervang'); // voeg een class toe
+        letter++ // incrementeer
+        if(letter == divideText.length){ // als de zin titel klaar is end de functie
             end();
         }
     }
-    let timer = setInterval(onDo, 65); // timer zodat de het stopt
+    // setinterval van 90 milliseconden
+    let timer = setInterval(onDo, 90);
     let end = function(){
         clearInterval(timer);
-        timer = null;
     }
     // =====================================
     // Filters en sliders
@@ -39,7 +41,6 @@
     // =====================================
     let img = document.getElementById('inFoto');  // element with id 'inFoto'
     let canvases = document.querySelector('canvas');
-    let slider = document.querySelectorAll('.slider'); 
     let reset = document.querySelector('#reset');
     let grayscale = document.getElementById('grayscale');
 	let brightness = document.getElementById('brightness');
@@ -51,23 +52,15 @@
 
     // apply filters
     let effect = function(){
-        let bri = brightness.value;
-        let gray = grayscale.value;
-        let blu = blur.value;
-        let inv = invert.value
-        let sep = sepia.value
-        let con = contrast.value
-        let op = opacity.value
-        
-        img.style.filter = 'brightness('+bri+'%) grayscale('+gray+'%) blur('+blu+'px) invert('+inv+'%) sepia('+sep+'%) contrast('+con+'%) opacity('+op+'%)';        	
+        img.style.filter = 'brightness('+brightness.value+'%) grayscale('+grayscale.value+'%) blur('+blur.value+'px) invert('+invert.value+'%) sepia('+sepia.value+'%) contrast('+contrast.value+'%) opacity('+opacity.value+'%)';       	
     }
-    document.getElementById('grayscale').addEventListener('input', effect);
-    document.getElementById('brightness').addEventListener('input', effect);
-    document.getElementById('blur').addEventListener('input', effect);
-    document.getElementById('invert').addEventListener('input', effect);
-    document.getElementById('sepia').addEventListener('input', effect);
-    document.getElementById('contrast').addEventListener('input', effect);
-    document.getElementById('opacity').addEventListener('input', effect);
+    grayscale.addEventListener('input', effect);
+    brightness.addEventListener('input', effect);
+    blur.addEventListener('input', effect);
+    invert.addEventListener('input', effect);
+    sepia.addEventListener('input', effect);
+    contrast.addEventListener('input', effect);
+    opacity.addEventListener('input', effect);
 
     // reset sliders and canvas
     reset.addEventListener('click', function(e) {
@@ -87,15 +80,15 @@
     // store image in localstorage
     img.addEventListener('load', function() {
       localStorage.setItem("imageData", this.src);
-    });   
+    });
     if (localStorage.getItem("imageData")) {
       img.src = localStorage.getItem("imageData");
-      
     }
 
     // remove localstorage
     remove.addEventListener('click', function(){
         img.src = localStorage.removeItem("imageData");
+        location.reload();
     });
     
     // save filter and put it into the canvas
@@ -104,6 +97,16 @@
         context.clearRect(10, 10, canvases.width, canvases.height);
         context.filter = getComputedStyle(img).getPropertyValue('filter');
         context.drawImage(img,10, 10, img.width, img.height);
+    });
+    // save filter with enter key
+    document.addEventListener('keydown', function(e){
+        e.preventDefault();
+        if(e.keyCode == 13){
+            let context = canvases.getContext('2d');
+            context.clearRect(10, 10, canvases.width, canvases.height);
+            context.filter = getComputedStyle(img).getPropertyValue('filter');
+            context.drawImage(img,10, 10, img.width, img.height);        
+        }
     });
 
     // download the image into your folder.
@@ -117,10 +120,9 @@
         document.body.removeChild(a);
     });
 
-
     // =====================================
 	// Images loader  
-    // =====================================    
+    // =====================================
     let myfile = document.querySelector('#myfile');
     myfile.addEventListener('change', function() {
         let url = URL.createObjectURL(myfile.files[0]); // A File, Blob or MediaSource object for which an object URL will be created. // returns a File object at the index 0

@@ -66,46 +66,60 @@ span.vervang {
 ===============================================*/
 
 #resizable {
-	background: #c0bbac73;
-	border-radius: 1.5rem;
-	box-shadow: 0.3rem 0.2rem 0.2rem #c0bbac;
-	float: right;
-	margin-top: 14rem;
-	margin-bottom: 2rem;
-	max-width: 41rem;
-	margin-right: 10rem;
-	padding: 1rem;
+    background: #c0bbac73;
+    border-radius: 1.5rem;
+    box-shadow: 0.3rem 0.2rem 0.2rem #c0bbac;
+    margin-top: 1rem;
+    max-width: 100%;
+    max-height: 45rem;
+    margin-left: 2rem;
+}
+figcaption{
+	line-height: 2rem;
+	margin: 0.3rem;
+    text-align: end;
 }
 canvas {
-	margin: 1rem 0;
-    object-fit: none;
+	background: #c0bbac73;
     border-radius: 1.5rem;
+    box-shadow: 0.3rem 0.2rem 0.2rem #c0bbac;
+	margin: 1rem 0;
+	border-radius: 1.5rem;
+	height: 45rem;
     max-width: 100%;
-    border: solid;
-  }
+    max-height: 100%;
+}
 img {
 	border-radius: 1.5rem;
 	float: right;
-	height: -webkit-fill-available;
+	height: fit-content;
+    width: auto;
+	max-height: 100%;
 	width: -webkit-fill-available;
 }
 
 .edit {
+	display: flex;
+	flex-flow: column nowrap;
 	line-height: 1.4rem;
-	max-width: 30rem;
-	margin: 0rem 5rem 5rem 2rem;	
+    max-width: 30rem;
+    margin: 0rem 5rem 5rem 2rem;
 }
 
 h2 {
-	font-size: 2.5rem;
-	margin: 4rem 0 3rem 0;
+	color: #2c3f55;
+    font-size: 2.5rem;
+    margin: 1rem 0 1rem 0;
 }
 
 .settings{
 	display: flex;
 	flex-flow: column nowrap;
-	list-style: none;
-	margin-left: -1rem;
+	justify-content: center;
+    list-style: none;
+    margin-left: 0.3rem;
+    margin-top: 3rem;
+    margin-bottom: 8rem;
 }
 
 .settings button{
@@ -137,7 +151,12 @@ label {
 	display: block;
 	font-size: 1.5rem;
 }
-
+.help{
+	color: #2c3f55;
+    position: absolute;
+    top: 37rem;
+    right: 34rem;
+}
 input, label {
 	line-height: 3rem;
 }
@@ -152,21 +171,25 @@ input, label {
 	}
 	.resizable  {
 		flex-flow: row nowrap;
-		width: 25%;
+		width: 100rem;
+	}
+	.edit {
+		flex-flow: row nowrap;
 	}
 }
-
 /*=============================================
 * Sliders
 ===============================================*/
 
 #options {
 	background: #e2dccb;
-	box-sizing: border-box;
-	border: solid;
-	border-radius: 1rem;    
-	margin-top: 2rem;
-	padding: 1rem;
+    box-sizing: border-box;
+    border: solid;
+    border-radius: 1rem;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    padding: 1rem;
+    width: 26rem;
 }
 .slider {
 	background-color: #b4942bb8;
@@ -231,10 +254,6 @@ button:focus{
     margin: 1rem;
     min-width: 12rem;
     padding: 0.5rem 0rem;
-    padding-top: 0.5rem;
-    padding-right: 0rem;
-    padding-bottom: 0.5rem;
-	padding-left: 0rem;
 }
 .url label:hover{
 	background-color: #2c3f55;
