@@ -156,9 +156,8 @@ label {
 }
 .help{
 	color: #2c3f55;
-    position: absolute;
-    top: 37rem;
-    right: 34rem;
+	margin-right: 9rem;
+    text-align: right;
 }
 input, label {
 	line-height: 3rem;
@@ -178,6 +177,9 @@ input, label {
 	}
 	.edit {
 		flex-flow: row nowrap;
+	}
+	#options{
+		width: 100%;
 	}
 }
 /*=============================================
@@ -262,4 +264,49 @@ button:focus{
 	background-color: #2c3f55;
 	color: #fff;
 	transition: 0.3s;
+}
+/*=============================================
+* Footer
+===============================================*/
+footer{
+	background-color: #fbd3685e;
+	padding: 2rem;
+}
+footer p{
+	color: #b4942b;
+	margin: 0.3rem;
+	margin-left: auto;
+	margin-right: 2rem;
+	text-align: right;
+}
+footer{
+	align-items: center;
+	background-color: #2c3f55;
+	border-radius: 0.2rem;
+	justify-content: space-between;
+	padding: 3rem;
+}
+footer .container{
+	margin-left: 1rem;
+}
+footer li{
+	color: #b4942b;
+	display: block;
+	font-size: 1.3rem;
+	margin-left: 1rem;
+	text-decoration: none;
+}
+@media (min-width: 50rem){
+	footer {
+		width: 100%;
+	}
+}
+.wrapper{
+	margin: 0 auto;
+	max-width: 100rem;
+	width: 85%;
+}
+a{
+	color: #b4942b;
+	text-decoration: none;
 }
